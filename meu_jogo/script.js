@@ -10,10 +10,9 @@ let gameRunning = false;
 let scoreInterval = null;
 let collisionInterval = null;
 
-// REMOVE evento antigo (evita duplicação)
+// GARANTE QUE NÃO DUPLICA EVENTO
 document.onkeydown = null;
 
-// PULO (garante 1 só evento)
 document.onkeydown = () => {
     if (!player.classList.contains("jump") && gameRunning) {
         player.classList.add("jump");
@@ -26,7 +25,7 @@ document.onkeydown = () => {
 
 // INICIAR JOGO
 function startGame() {
-    // Mata tudo antes
+    // LIMPA TUDO
     clearInterval(scoreInterval);
     clearInterval(collisionInterval);
 
@@ -37,8 +36,9 @@ function startGame() {
     gameOverText.style.display = "none";
     restartBtn.style.display = "none";
 
+    // RESET ANIMAÇÃO (IMPORTANTE 🔥)
     obstacle.style.animation = "none";
-    void obstacle.offsetWidth; // força reset da animação
+    void obstacle.offsetWidth;
     obstacle.style.animation = "moveObstacle 2s linear infinite";
 
     // SCORE
@@ -81,5 +81,5 @@ restartBtn.onclick = () => {
     startGame();
 };
 
-// INICIA UMA ÚNICA VEZ
+// INICIA UMA VEZ
 startGame();
