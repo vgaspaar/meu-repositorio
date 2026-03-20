@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Mario JS</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,13 +12,21 @@
 
     <div id="game">
         <div id="score">Score: 0</div>
+        <div id="highScore">Recorde: 0</div>
+
         <div id="player"></div>
         <div id="obstacle"></div>
+
         <div id="gameOver">GAME OVER</div>
+
+        <button id="start">Start</button>
         <button id="restart">Reiniciar</button>
     </div>
 
-    <!-- JS (IMPORTANTE: no final do body) -->
+    <!-- SONS -->
+    <audio id="jumpSound" src="jump.mp3"></audio>
+    <audio id="gameOverSound" src="gameover.mp3"></audio>
+
     <script src="script.js"></script>
 
 </body>

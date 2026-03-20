@@ -12,21 +12,24 @@ body {
     border-bottom: 10px solid green;
 }
 
-#score {
+#score, #highScore {
     position: absolute;
-    top: 10px;
     left: 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Arial;
 }
+
+#score { top: 10px; }
+#highScore { top: 35px; }
 
 #player {
     position: absolute;
     bottom: 0;
     left: 50px;
-    width: 50px;
-    height: 50px;
-    background: red;
+    width: 60px;
+    height: 60px;
+    background: url('mario.png') no-repeat center;
+    background-size: contain;
 }
 
 #obstacle {
@@ -36,7 +39,7 @@ body {
     width: 40px;
     height: 60px;
     background: green;
-    animation: moveObstacle 2s linear infinite;
+    background-size: contain;
 }
 
 @keyframes moveObstacle {
@@ -64,13 +67,20 @@ body {
     color: red;
 }
 
+#start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 25px;
+    font-size: 20px;
+}
+
 #restart {
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 20px;
-    font-size: 18px;
     display: none;
-    cursor: pointer;
 }
